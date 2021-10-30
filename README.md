@@ -1,1 +1,1 @@
-# Hackerthon-Employee_Mangement
+# Hackerthon-Employee_Management
