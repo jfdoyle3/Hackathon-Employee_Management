@@ -1,6 +1,7 @@
 package com.careerdevs.employee_management.controllers;
 import com.careerdevs.employee_management.entities.Employee;
 import com.careerdevs.employee_management.repositories.EmployeeRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -12,8 +13,11 @@ import java.util.concurrent.atomic.AtomicLong;
 @RestController
 @RequestMapping("/employees")
 public class EmployeeController {
+    @Autowired
     private EmployeeRepository repository;
+
     private AtomicLong idCounter = new AtomicLong();
+
 
     public EmployeeController(EmployeeRepository repository) {
         this.repository = repository;
