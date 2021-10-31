@@ -1,4 +1,4 @@
-package com.careerdevs.employee_management.entity;
+package com.careerdevs.employee_management.entities;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

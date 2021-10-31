@@ -27,6 +27,8 @@ buildNumber.properties
 .mtj.tmp/
 
 # Package Files #
+# OpenShift Projects need .jar files in \deployments
+# uncomment if not using OpenShift.
 #*.jar
 *.war
 *.nar

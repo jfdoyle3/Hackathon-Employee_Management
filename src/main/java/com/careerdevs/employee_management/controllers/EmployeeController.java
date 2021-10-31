@@ -1,5 +1,6 @@
-package com.careerdevs.employee_management.controller;
-import com.careerdevs.employee_management.entity.Employee;
+package com.careerdevs.employee_management.controllers;
+import com.careerdevs.employee_management.entities.Employee;
+import com.careerdevs.employee_management.repositories.EmployeeRepository;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -11,17 +12,15 @@ import java.util.concurrent.atomic.AtomicLong;
 @RestController
 @RequestMapping("/employees")
 public class EmployeeController {
-    //    private final EmployeeRepository repository;
+    private EmployeeRepository repository;
     private AtomicLong idCounter = new AtomicLong();
-    //
-//    public EmployeeController(EmployeeRepository repository) {
-//        this.repository = repository;
-//    }
+
+    public EmployeeController(EmployeeRepository repository) {
+        this.repository = repository;
+    }
+
     Map<Long, Employee> employees = new HashMap<>();
 
-    public EmployeeController() {
-        employees.put(idCounter.incrementAndGet(), new Employee(idCounter.get(),"Jim", "Developer",56 ));
-    }
 
 
     @GetMapping
