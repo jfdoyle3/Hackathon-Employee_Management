@@ -44,13 +44,8 @@ public class EmployeeController {
     public @ResponseBody Employee updateEmployee(@PathVariable Long id, @RequestBody Employee updates) {
         Employee Employee = repository.findById(id).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND));
 
-//        updates.setId(Employee.getId());
-//        return repository.save(updates);
         if (updates.getName() != null) Employee.setName(updates.getName());
         if(updates.getRole()!= null) Employee.setRole(updates.getRole());
-//        if (updates.getEmail() != null) Employee.setEmail(updates.getEmail());
-//        if (updates.getCohort() != null) Employee.setCohort(updates.getCohort());
-//        if (updates.getLanguages() != null) Employee.setLanguages(updates.getLanguages());
 
         return repository.save(Employee);
     }
