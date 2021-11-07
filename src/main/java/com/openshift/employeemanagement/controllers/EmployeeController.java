@@ -24,7 +24,7 @@ public class EmployeeController {
     }
 
     @GetMapping("/role/{role}")
-    public ResponseEntity<List<Employee>> getEmployeesByCohort(@PathVariable String role) {
+    public ResponseEntity<List<Employee>> getEmployeesByRole(@PathVariable String role) {
         return new ResponseEntity<>(repository.findAllByRole(role, Sort.by("name")), HttpStatus.OK);
     }
 
