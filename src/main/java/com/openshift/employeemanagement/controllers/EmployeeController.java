@@ -29,7 +29,8 @@ public class EmployeeController {
     }
 
     @GetMapping("/{id}")
-    public @ResponseBody Employee getOneEmployee(@PathVariable Long id) {
+    public @ResponseBody
+    Employee getOneEmployee(@PathVariable Long id) {
         return repository.findById(id).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND));
     }
 
@@ -41,11 +42,12 @@ public class EmployeeController {
 
 
     @PutMapping("/{id}")
-    public @ResponseBody Employee updateEmployee(@PathVariable Long id, @RequestBody Employee updates) {
+    public @ResponseBody
+    Employee updateEmployee(@PathVariable Long id, @RequestBody Employee updates) {
         Employee Employee = repository.findById(id).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND));
 
         if (updates.getName() != null) Employee.setName(updates.getName());
-        if(updates.getRole()!= null) Employee.setRole(updates.getRole());
+        if (updates.getRole() != null) Employee.setRole(updates.getRole());
 
         return repository.save(Employee);
     }
