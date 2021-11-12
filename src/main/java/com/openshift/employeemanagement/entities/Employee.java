@@ -2,9 +2,10 @@ package com.openshift.employeemanagement.entities;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.List;
 
 @Entity
-public abstract class Employee {
+public class Employee {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -14,7 +15,6 @@ public abstract class Employee {
     private String department;
     private String location;
     //    private String skills;
-    @ManyToOne()
     private String supervisor;
     private Double salary;
     private Date dateHired;
@@ -26,7 +26,7 @@ public abstract class Employee {
         this.role = role;
     }
 
-    public Employee(String name, String role, String department, String location, String supervisor, Double salary) {
+    public Employee(String name, String role, String department, String location, Double salary) {
         this.name = name;
         this.role = role;
     }
