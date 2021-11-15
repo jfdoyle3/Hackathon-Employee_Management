@@ -18,6 +18,9 @@ public class Employee {
     private String supervisor;
     private Double salary;
     private Date dateHired;
+    @OneToOne
+    @JoinColumn(name = "employee_id", referencedColumnName = "id")
+    private Shift shift;
 
     public Employee() {}
 
